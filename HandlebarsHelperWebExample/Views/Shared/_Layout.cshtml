@@ -9,9 +9,39 @@
     @Scripts.Render("~/bundles/app")
     @Scripts.Render("~/bundles/templates")
 </head>
-<body>
-    HandlebarsHelper.RawTemplateInjector.InjectRawTemplates("~/scripts/templates", new[] { "*.hbs" })
-    Hello
+<body>    
+
+    <h1>
+        Optimized Templates
+    </h1>
+    <h3>
+        Bundler:
+    </h3>
+    <h4>
+        bundles.Add(new Bundle("~/bundles/templates", new HandlebarsTransformer())<br />
+        .IncludeDirectory("~/Scripts/templates", "*.hbs", true));<br />
+    </h4>
+
+    <h3>
+        Page:
+    </h3>
+    <h4>
+        @@Scripts.Render("~/bundles/templates")
+    </h4>
+
+
+    <h1>
+        Unoptimized Templates
+    </h1>
+    <h3>
+        Page:
+    </h3>
+    <h4>
+        @@HandlebarsHelper.RawTemplateInjector.InjectRawTemplates("~/scripts/templates", new[] { "*.hbs" })
+    </h4>
+
+    
+
     @RenderBody()
 </body>
 </html>

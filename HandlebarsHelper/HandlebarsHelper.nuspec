@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <projectUrl>https://github.com/kingpin2k/HandlebarsHelper/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>HandlebarsHelper is a library for helping you precompile handlebars templates for Emberjs.</description>
     <releaseNotes>Initial Release.</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>Handlebarsjs Emberjs</tags>
