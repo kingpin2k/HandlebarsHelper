@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("HandlebarsHelper")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Handlebars Helpers For .net developers")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("kingpin2k")]
 [assembly: AssemblyProduct("HandlebarsHelper")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
