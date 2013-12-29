@@ -12,7 +12,7 @@ namespace HandlebarsHelperTester
         {
             //lazy test
             HandlebarsCompiler hc = new HandlebarsCompiler();
-            var template = hc.Precompile("asdf {{asdf}}");
+            var template = hc.Precompile("asdf {{asdf}}", false);
             Assert.IsNotNull(template);
             Assert.IsTrue(template.IndexOf("asdf") > 0);
         }
