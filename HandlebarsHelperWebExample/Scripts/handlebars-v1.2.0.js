@@ -1298,6 +1298,7 @@ var __module11__ = (function(__dependency1__) {
 
       // Flush any trailing content that might be pending.
       this.pushSource('');
+
       return this.createFunctionContext(asObject);
     },
 

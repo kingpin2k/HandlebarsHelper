@@ -12,19 +12,6 @@ namespace HandlebarsHelper
 {
     public class HandlebarsTransformer : IBundleTransform
     {
-        private HandlebarsCompiler _compiler = null;
-        private HandlebarsCompiler Compiler
-        {
-            get
-            {
-                if (_compiler == null)
-                {
-                    _compiler = new HandlebarsCompiler();
-                }
-                return _compiler;
-            }
-        }
-
         ITemplateNamer namer;
 
         public HandlebarsTransformer()
@@ -39,6 +26,7 @@ namespace HandlebarsHelper
 
         public void Process(BundleContext context, BundleResponse response)
         {
+            var compiler = new HandlebarsCompiler();
             var root = context.HttpContext.Server.MapPath(context.BundleVirtualPath);
             var templates = new Dictionary<string, string>();
             foreach (var bundleFile in response.Files)
@@ -47,22 +35,23 @@ namespace HandlebarsHelper
                 var filePath = context.HttpContext.Server.MapPath(bundleFile.VirtualFile.VirtualPath);
                 var templateName = namer.GenerateName(filePath, root);
                 var template = File.ReadAllText(filePath);
-                var compiled = Compiler.Precompile(template, false);
+                var compiled = compiler.Precompile(template, false);
 
                 templates[templateName] = compiled;
             }
             StringBuilder javascript = new StringBuilder();
             foreach (var templateName in templates.Keys)
             {
-                javascript.AppendFormat("Ember.Templates['{0}']=", templateName);
+                javascript.AppendFormat("Ember.TEMPLATES['{0}']=", templateName);
                 javascript.AppendFormat("Ember.Handlebars.template({0});", templates[templateName]);
             }
 
             var Compressor = new JavaScriptCompressor();
+            var compressed = Compressor.Compress(javascript.ToString());
 
             response.ContentType = "text/javascript";
             response.Cacheability = HttpCacheability.Public;
-            response.Content = Compressor.Compress(javascript.ToString());
+            response.Content = javascript.ToString();
         }
 
     }
