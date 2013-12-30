@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Optimization;
 
 namespace HandlebarsHelper
 {
@@ -40,7 +38,7 @@ namespace HandlebarsHelper
                 templates.AppendLine(File.ReadAllText(template));
                 templates.AppendLine("</script>");
             }
-            return new MvcHtmlString(templates.ToString());
+            return new HtmlString(templates.ToString());
         }
 
         private static List<string> FindFiles(string searchPath, string templatePath, string[] templateExtensions)
@@ -56,5 +54,5 @@ namespace HandlebarsHelper
 
             return files;
         }
-    }
+    } 
 }

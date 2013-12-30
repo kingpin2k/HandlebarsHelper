@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>HandlebarsHelper</id>
+    <version>1.0.0</version>
+    <title>Handlebars Compiler/Bundler for ASP.Net</title>
+    <authors>kingpin2k</authors>
+    <owners>Daniel</owners>
     <projectUrl>https://github.com/kingpin2k/HandlebarsHelper/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>HandlebarsHelper is a library for helping you precompile handlebars templates for Emberjs.</description>

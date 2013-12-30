@@ -32,7 +32,7 @@ namespace HandlebarsHelper
             foreach (var bundleFile in response.Files)
             {
 
-                var filePath = context.HttpContext.Server.MapPath(bundleFile.VirtualFile.VirtualPath);
+                var filePath = context.HttpContext.Request.MapPath(bundleFile.VirtualFile.VirtualPath);
                 var templateName = namer.GenerateName(filePath, root);
                 var template = File.ReadAllText(filePath);
                 var compiled = compiler.Precompile(template, false);
