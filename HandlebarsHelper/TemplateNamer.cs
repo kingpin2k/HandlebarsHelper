@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Web.Optimization;
 
 namespace HandlebarsHelper
 {
@@ -16,14 +18,11 @@ namespace HandlebarsHelper
             this.DirectorySeparator = new char[] { Path.DirectorySeparatorChar };
         }
 
-        public string GenerateName(string filePath, string bundlePath)
+        public string GenerateName(string bundleRelativePath, string fileName)
         {
-            var fileName = Path.GetFileName(filePath);
             var fileNameNoExtension = Path.GetFileNameWithoutExtension(fileName);
-            var fileLocation = Path.GetDirectoryName(filePath);
-            var relativeFileLocation = fileLocation.Substring(bundlePath.Length);
 
-            var directories = relativeFileLocation.Split(DirectorySeparator, StringSplitOptions.RemoveEmptyEntries);
+            var directories = bundleRelativePath.Split(DirectorySeparator, StringSplitOptions.RemoveEmptyEntries);
 
             var temp = String.Join("/", directories);
 

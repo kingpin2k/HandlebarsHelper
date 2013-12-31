@@ -27,13 +27,14 @@ namespace HandlebarsHelper
         public void Process(BundleContext context, BundleResponse response)
         {
             var compiler = new HandlebarsCompiler();
-            var root = context.HttpContext.Server.MapPath(context.BundleVirtualPath);
             var templates = new Dictionary<string, string>();
+            var server = context.HttpContext.Server;
+         
             foreach (var bundleFile in response.Files)
             {
-
-                var filePath = context.HttpContext.Request.MapPath(bundleFile.VirtualFile.VirtualPath);
-                var templateName = namer.GenerateName(filePath, root);
+                var filePath = server.MapPath(bundleFile.VirtualFile.VirtualPath);
+                var bundleRelativePath = GetRelativePath(server, bundleFile, filePath);
+                var templateName = namer.GenerateName(bundleRelativePath, bundleFile.VirtualFile.Name);
                 var template = File.ReadAllText(filePath);
                 var compiled = compiler.Precompile(template, false);
 
@@ -52,6 +53,13 @@ namespace HandlebarsHelper
             response.ContentType = "text/javascript";
             response.Cacheability = HttpCacheability.Public;
             response.Content = javascript.ToString();
+        }
+
+        private string GetRelativePath(HttpServerUtilityBase server, BundleFile bundleFile, string filePath)
+        {
+            var relativeBundlePath = bundleFile.IncludedVirtualPath.Remove(bundleFile.IncludedVirtualPath.IndexOf(@"\"));
+            var bundlePath = server.MapPath(relativeBundlePath);
+            return FileToolkit.PathDifference(filePath, bundlePath);
         }
 
     }

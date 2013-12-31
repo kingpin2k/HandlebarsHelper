@@ -96,6 +96,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawTemplateInjector.cs" />
     <Compile Include="TemplateNamer.cs" />
+    <Compile Include="FileToolkit.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scripts\handlebars-v1.2.0.js" />

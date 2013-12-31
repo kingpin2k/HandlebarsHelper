@@ -31,11 +31,12 @@ namespace HandlebarsHelper
         private static IHtmlString BuildTemplates(string templatePath, List<string> files, ITemplateNamer templateNamer)
         {
             var templates = new StringBuilder();
-            foreach (var template in files)
+            foreach (var templateFile in files)
             {
-                var templateName = templateNamer.GenerateName(template, templatePath);
+                var pathDiff = FileToolkit.PathDifference(templateFile, templatePath);
+                var templateName = templateNamer.GenerateName(pathDiff, Path.GetFileName(templateFile));
                 templates.AppendFormat("<script type='text/x-handlebars' data-template-name='{0}'>\n", templateName);
-                templates.AppendLine(File.ReadAllText(template));
+                templates.AppendLine(File.ReadAllText(templateFile));
                 templates.AppendLine("</script>");
             }
             return new HtmlString(templates.ToString());
