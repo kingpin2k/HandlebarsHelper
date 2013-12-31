@@ -52,7 +52,7 @@ namespace HandlebarsHelper
 
             response.ContentType = "text/javascript";
             response.Cacheability = HttpCacheability.Public;
-            response.Content = javascript.ToString();
+            response.Content = compressed;
         }
 
         private string GetRelativePath(HttpServerUtilityBase server, BundleFile bundleFile, string filePath)
