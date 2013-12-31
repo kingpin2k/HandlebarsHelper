@@ -17,7 +17,7 @@ namespace HandlebarsHelperWebExample
                                     "~/Scripts/ember.js").Include(
                                     "~/Scripts/app.js"));
 
-            bundles.Add(new Bundle("~/bundles/templates", new HandlebarsTransformer())
+            bundles.Add(new Bundle("~/bundles/templatesasdfasdfasdfasd", new HandlebarsTransformer())
                 .IncludeDirectory("~/Scripts/templates", "*.hbs", true));
 
             BundleTable.EnableOptimizations = true;
