@@ -1,16 +1,38 @@
-<?xml version="1.0"?>
-<package >
-  <metadata>
-    <id>HandlebarsHelper</id>
-    <version>1.0.0</version>
-    <title>Handlebars Compiler/Bundler for ASP.Net</title>
-    <authors>kingpin2k</authors>
-    <owners>Daniel</owners>
-    <projectUrl>https://github.com/kingpin2k/HandlebarsHelper/</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>HandlebarsHelper is a library for helping you precompile handlebars templates for Emberjs.</description>
-    <releaseNotes>Initial Release.</releaseNotes>
-    <copyright>Copyright 2013</copyright>
-    <tags>Handlebarsjs Emberjs</tags>
-  </metadata>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>HandlebarsHelper</id>
+        <version>1.0.1</version>
+        <title>Handlebars Compiler/Bundler for ASP.Net</title>
+        <authors>kingpin2k</authors>
+        <owners>Daniel</owners>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/kingpin2k/HandlebarsHelper/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>HandlebarsHelper is a library for helping you precompile handlebars templates for Emberjs.</description>
+        <releaseNotes>release 2</releaseNotes>
+        <copyright>Copyright (c) 2013 kingpin2k</copyright>
+        <language>en-US</language>
+        <tags>Handlebarsjs Emberjs</tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="MsieJavaScriptEngine" version="1.2.0" />
+                <dependency id="YUICompressor.NET" version="2.3.0.0" />
+                <dependency id="Microsoft.AspNet.Web.Optimization" version="1.1.2" />
+            </group>
+            <group targetFramework=".NETFramework4.0">
+                <dependency id="YUICompressor.NET" version="2.3.0.0" />
+                <dependency id="MsieJavaScriptEngine" version="1.2.0" />
+                <dependency id="Microsoft.AspNet.Web.Optimization" version="1.1.2" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\Release\net40\HandlebarsHelper.dll" target="lib\net40\HandlebarsHelper.dll" />
+        <file src="bin\Release\net40\HandlebarsHelper.pdb" target="lib\net40\HandlebarsHelper.pdb" />
+        <file src="bin\Release\net45\HandlebarsHelper.dll" target="lib\net45\HandlebarsHelper.dll" />
+        <file src="bin\Release\net45\HandlebarsHelper.pdb" target="lib\net45\HandlebarsHelper.pdb" />
+        <file src="bin\Release\net451\HandlebarsHelper.dll" target="lib\net451\HandlebarsHelper.dll" />
+        <file src="bin\Release\net451\HandlebarsHelper.pdb" target="lib\net451\HandlebarsHelper.pdb" />
+    </files>
 </package>
