@@ -1,7 +1,9 @@
 HandlebarsHelper
 ================
 
-HandlebarsHelper will ultimately help you inject your handlebars files into your page.
+HandlebarsHelper will ultimately help you inject your handlebars files into your ASP.Net application.  
+
+Use Nuget to install, either search for `HandlebarsHelper` in the Package Manager UI or from the console `Install-Package HandlebarsHelper`
 
 ## Quick Start Guide
 
