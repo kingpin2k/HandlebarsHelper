@@ -19,7 +19,7 @@ namespace HandlebarsHelper
         {
             Engine = new MsieJsEngine(true, true);
             Engine.SetVariableValue("exports", new object());
-            Engine.ExecuteResource("HandlebarsHelper.Scripts.handlebars-v1.2.0.js", typeof(HandlebarsCompiler));
+            Engine.ExecuteResource("HandlebarsHelper.Scripts.handlebars-v1.3.0.js", typeof(HandlebarsCompiler));
             Engine.ExecuteResource("HandlebarsHelper.Scripts.ember-template-compiler.js", typeof(HandlebarsCompiler));
             Engine.Execute("var precompile = exports.precompile;");
             Compressor = new JavaScriptCompressor();

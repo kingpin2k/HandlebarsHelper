@@ -13,11 +13,11 @@ namespace HandlebarsHelperWebExample
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                                    "~/Scripts/handlebars-v1.2.0.js").Include(
+                                    "~/Scripts/handlebars-v1.3.0.js").Include(
                                     "~/Scripts/ember.js").Include(
                                     "~/Scripts/app.js"));
 
-            bundles.Add(new Bundle("~/bundles/templatesasdfasdfasdfasd", new HandlebarsTransformer())
+            bundles.Add(new Bundle("~/bundles/templates", new HandlebarsTransformer())
                 .IncludeDirectory("~/Scripts/templates", "*.hbs", true));
 
             BundleTable.EnableOptimizations = true;

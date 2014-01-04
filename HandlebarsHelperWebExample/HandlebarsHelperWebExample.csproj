@@ -201,7 +201,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\ember.js" />
-    <Content Include="Scripts\handlebars-v1.2.0.js" />
+    <Content Include="Scripts\handlebars-v1.3.0.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\templates\colors\index.hbs" />
     <None Include="Scripts\templates\colors\colors.hbs" />

@@ -7,7 +7,7 @@
     <title>@ViewBag.Title</title>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/app")
-    @Scripts.Render("~/bundles/templatesasdfasdfasdfasd")
+    @Scripts.Render("~/bundles/templates")
 </head>
 <body>    
 
@@ -40,8 +40,7 @@
         @@HandlebarsHelper.RawTemplateInjector.InjectRawTemplates("~/scripts/templates", new[] { "*.hbs" })
     </h4>
 
-    @HandlebarsHelper.RawTemplateInjector.InjectRawTemplates("~/scripts/templates", new[] { "*.hbs" })
-
+    
     @RenderBody()
 </body>
 </html>

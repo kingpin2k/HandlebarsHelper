@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>HandlebarsHelper</id>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <title>Handlebars Compiler/Bundler for ASP.Net</title>
         <authors>kingpin2k</authors>
         <owners>Daniel</owners>
         <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
         <projectUrl>https://github.com/kingpin2k/HandlebarsHelper/</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>HandlebarsHelper is a library for helping you precompile handlebars templates for Emberjs.</description>
+        <description>HandlebarsHelper is a library for helping you precompile Handlebars (1.3) templates for Emberjs.</description>
         <releaseNotes>Hardening</releaseNotes>
         <copyright>Copyright (c) 2013 kingpin2k</copyright>
         <language>en-US</language>
