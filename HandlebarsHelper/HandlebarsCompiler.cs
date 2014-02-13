@@ -1,5 +1,4 @@
-﻿using MsieJavaScriptEngine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,29 +9,44 @@ using Yahoo.Yui.Compressor;
 
 namespace HandlebarsHelper
 {
-    public class HandlebarsCompiler
+    public class HandlebarsCompiler:IDisposable
     {
-        MsieJsEngine Engine;
+        Jurassic.ScriptEngine Engine;
         JavaScriptCompressor Compressor;
 
         public HandlebarsCompiler()
         {
-            Engine = new MsieJsEngine(true, true);
-            Engine.SetVariableValue("exports", new object());
-            Engine.ExecuteResource("HandlebarsHelper.Scripts.handlebars-v1.3.0.js", typeof(HandlebarsCompiler));
-            Engine.ExecuteResource("HandlebarsHelper.Scripts.ember-template-compiler.js", typeof(HandlebarsCompiler));
+            Engine = new Jurassic.ScriptEngine();
+            var ass = typeof(HandlebarsCompiler).Assembly;
+            Engine.Execute("var exports = {};");
+            Engine.Execute(GetEmbeddedResource("HandlebarsHelper.Scripts.handlebars-v1.3.0.js", ass));
+            Engine.Execute(GetEmbeddedResource("HandlebarsHelper.Scripts.ember-template-compiler.js", ass));
             Engine.Execute("var precompile = exports.precompile;");
             Compressor = new JavaScriptCompressor();
         }
 
         public string Precompile(string template, bool compress)
         {
-            var compiled = Engine.CallFunction<string>("precompile", template, false);
+            var compiled = Engine.CallGlobalFunction<string>("precompile", template, false);
             if (compress)
             {
                 compiled = Compressor.Compress(compiled);
             }
             return compiled;
+        }
+
+        public string GetEmbeddedResource(string resource, Assembly ass)
+        {
+            
+            using (var reader = new StreamReader(ass.GetManifestResourceStream(resource)))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+        public void Dispose()
+        {
+
         }
     }
 }
