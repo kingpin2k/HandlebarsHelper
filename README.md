@@ -5,7 +5,7 @@ HandlebarsHelper will ultimately help you inject your handlebars files into your
 
 ## Installation
 
-Use Nuget to install, either search for `HandlebarsHelper` in the Package Manager UI or from the console `Install-Package HandlebarsHelper`
+Use Nuget to install, either search for `HandlebarsHelper` in the Package Manager UI or from the console `Install-Package HandlebarsHelper`.  https://www.nuget.org/packages/HandlebarsHelper/
 
 ## Quick Start Guide
 
