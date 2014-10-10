@@ -121,7 +121,7 @@ public interface ITemplateNamer
 }
 ```
 
-What is passed in?  If you look up above, at the table, column 2 and 3, that's it.  The template's relative path and the template's file name.
+What is passed in?  If you look up above, at the table, column 1 and 2, that's it.  The template's relative path and the template's file name.
 
 Example custom namer:
 
