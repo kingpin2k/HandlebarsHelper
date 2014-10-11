@@ -154,3 +154,5 @@ bundles.Add(new Bundle("~/bundles/templates", new HandlebarsTransformer(new Cust
 ```
 
 Report all issues, feel free to submit PRs, clean up the code, make the readme more coherent, stylize my example page.
+
+Another example can be found here: https://github.com/kingpin2k/Zoo
