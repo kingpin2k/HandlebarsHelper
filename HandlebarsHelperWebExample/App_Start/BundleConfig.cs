@@ -13,7 +13,7 @@ namespace HandlebarsHelperWebExample
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                                    "~/Scripts/handlebars-v1.3.0.js").Include(
+                                    "~/Scripts/handlebars-v2.0.0.js").Include(
                                     "~/Scripts/ember.js").Include(
                                     "~/Scripts/app.js"));
 

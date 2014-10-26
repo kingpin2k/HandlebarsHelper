@@ -9,7 +9,7 @@ using Yahoo.Yui.Compressor;
 
 namespace HandlebarsHelper
 {
-    public class HandlebarsCompiler:IDisposable
+    public class HandlebarsCompiler
     {
         Jurassic.ScriptEngine Engine;
         JavaScriptCompressor Compressor;
@@ -19,7 +19,8 @@ namespace HandlebarsHelper
             Engine = new Jurassic.ScriptEngine();
             var ass = typeof(HandlebarsCompiler).Assembly;
             Engine.Execute("var exports = {};");
-            Engine.Execute(GetEmbeddedResource("HandlebarsHelper.Scripts.handlebars-v1.3.0.js", ass));
+            Engine.Execute("var module = {};");
+            Engine.Execute(GetEmbeddedResource("HandlebarsHelper.Scripts.handlebars-v2.0.0.js", ass));
             Engine.Execute(GetEmbeddedResource("HandlebarsHelper.Scripts.ember-template-compiler.js", ass));
             Engine.Execute("var precompile = exports.precompile;");
             Compressor = new JavaScriptCompressor();
@@ -37,16 +38,10 @@ namespace HandlebarsHelper
 
         public string GetEmbeddedResource(string resource, Assembly ass)
         {
-            
             using (var reader = new StreamReader(ass.GetManifestResourceStream(resource)))
             {
                 return reader.ReadToEnd();
             }
-        }
-
-        public void Dispose()
-        {
-
         }
     }
 }
