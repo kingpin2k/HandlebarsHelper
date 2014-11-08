@@ -155,3 +155,5 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 HandlebarsHelper/HandlebarsHelper.2.0.0.nupkg
+*.nupkg
+packages/Jurassic.2.2.0/lib/Jurassic.dll
