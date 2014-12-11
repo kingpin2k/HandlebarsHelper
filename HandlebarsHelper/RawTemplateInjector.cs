@@ -25,7 +25,7 @@ namespace HandlebarsHelper
             templatePath = HttpContext.Current.Request.MapPath(templatePath);
             var files = FindFiles(templatePath, templatePath, templateExtensions);
 
-            return BuildTemplates(templatePath, files, new TemplateNamer());
+            return BuildTemplates(templatePath, files, templateNamer);
         }
 
         private static IHtmlString BuildTemplates(string templatePath, List<string> files, ITemplateNamer templateNamer)
