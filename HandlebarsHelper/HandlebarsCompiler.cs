@@ -28,8 +28,6 @@ namespace HandlebarsHelper
 
         public string Precompile(string template, bool compress)
         {
-            // \r\n is breaking css, it's worthless to keep it in at this point anyway
-            template = template.Replace(Environment.NewLine, " ");
             var compiled = Engine.CallGlobalFunction<string>("precompile", template, false);
             if (compress)
             {

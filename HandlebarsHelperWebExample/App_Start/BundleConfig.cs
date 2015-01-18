@@ -20,6 +20,9 @@ namespace HandlebarsHelperWebExample
             bundles.Add(new Bundle("~/bundles/templates", new HandlebarsTransformer())
                 .IncludeDirectory("~/Scripts/templates", "*.hbs", true));
 
+            bundles.Add(new StyleBundle("~/bundles/styles")
+                .Include("~/Content/styles.css"));
+
             BundleTable.EnableOptimizations = true;
         }
     }
